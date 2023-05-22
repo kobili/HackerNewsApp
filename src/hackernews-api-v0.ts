@@ -2,7 +2,7 @@ import axios from "axios";
 import { User } from "./types/hacker-news-api/User";
 import { iComment, iJob, iPoll, iPollOption, iStory } from "./types/hacker-news-api/Item";
 
-const HACKER_NEWS_API_ENDPOINT_BASE_URL = "https://hacker-news.firebaseio.com/v0/";
+const HACKER_NEWS_API_ENDPOINT_BASE_URL = "https://hacker-news.firebaseio.com/v0";
 
 export const getUser = async (username: string) => {
     return axios.get<User>(`${HACKER_NEWS_API_ENDPOINT_BASE_URL}/user/${username}.json`)

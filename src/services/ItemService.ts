@@ -1,9 +1,10 @@
-import { getComment, getStory } from "../hackernews-api-v0";
+import { getComment, getJob, getStory } from "../hackernews-api-v0";
 import { CommentResponse } from "../types/Comment";
+import { JobResponse } from "../types/Job";
 import { StoryPreviewResponse, StoryResponse } from "../types/Story";
 
 class ItemService {
-    constructor() {}
+    constructor() { }
 
     public async getStory(storyId: number) {
         const story = await getStory(storyId);
@@ -44,7 +45,7 @@ class ItemService {
         }
     }
 
-    public async getComment(commentId: number) {
+    public async getComment(commentId: number): Promise<CommentResponse> {
         const comment = await getComment(commentId);
 
         let response: CommentResponse = {
@@ -57,12 +58,23 @@ class ItemService {
         }
 
         if (!comment.kids) {
-            return response; 
+            return response;
         }
 
         response.replies = await Promise.all(comment.kids.map(childId => this.getComment(childId)));
 
         return response;
+    }
+
+    public async getJob(jobId: number): Promise<JobResponse> {
+        const job = await getJob(jobId);
+
+        return {
+            id: job.id,
+            title: job.title,
+            url: job.url,
+            postedAt: job.time,
+        }
     }
 }
 

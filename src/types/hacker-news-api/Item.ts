@@ -13,8 +13,8 @@ export interface iItem {
 
 export interface iJob extends iItem {
     text?: string;          // The comment, story or poll text. HTML
-    url?: string;           // The URL of the story
-    title?: string;         // The title of the story, poll or job
+    url: string;           // The URL of the story
+    title: string;         // The title of the story, poll or job
 }
 
 export interface iStory extends iItem {
