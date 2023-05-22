@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import { getUser } from './src/hackernews-api-v0';
 import { User } from './src/types/User';
+import { errorHandler, errorLogger } from './src/middleware/ErrorHandlers';
 
 const app = express()
 const SERVER_PORT = 3000;
@@ -18,6 +19,9 @@ app.get("/user/:userId", async (req: Request, res: Response) => {
 
     res.send(userInfo)
 })
+
+app.use(errorLogger);
+app.use(errorHandler);
 
 app.listen(
     SERVER_PORT,
