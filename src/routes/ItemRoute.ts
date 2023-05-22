@@ -31,4 +31,18 @@ router.get("/job/:jobId", async (req: Request, res: Response, next: NextFunction
         .catch(err => next(err));
 });
 
+router.get("/ask/:askId", async (req: Request, res: Response, next: NextFunction) => {
+    const askId = Number.parseInt(req.params.askId);
+    return itemService.getAsk(askId)
+        .then(response => res.send(response))
+        .catch(err => next(err));
+});
+
+router.get("/ask/:askId/preview", async (req: Request, res: Response, next: NextFunction) => {
+    const askId = Number.parseInt(req.params.askId);
+    return itemService.getAskPreview(askId)
+        .then(response => res.send(response))
+        .catch(err => next(err));
+});
+
 export default router;

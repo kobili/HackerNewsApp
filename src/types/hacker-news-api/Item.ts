@@ -41,3 +41,10 @@ export interface iPollOption extends iItem {
     parent?: number;        // The item's parent. For pollops, the relevant poll
     score?: number;         // The votes for a pollopt
 }
+
+export interface iAsk extends iItem {
+    descendants: number;
+    score: number;
+    text: string;
+    title: string;
+}
