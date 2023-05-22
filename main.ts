@@ -1,8 +1,7 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-import { getUser } from './src/hackernews-api-v0';
-import { User } from './src/types/User';
 import { errorHandler, errorLogger } from './src/middleware/ErrorHandlers';
+import itemRoute from './src/routes/ItemRoute';
 
 const app = express()
 const SERVER_PORT = 3000;
@@ -13,12 +12,7 @@ app.get("/", (req: Request, res: Response) => {
     res.send({ message: "Hello, Express!" })
 });
 
-app.get("/user/:userId", async (req: Request, res: Response) => {
-    const userId = req.params.userId;
-    const userInfo = await getUser(userId);
-
-    res.send(userInfo)
-})
+app.use("/item", itemRoute);
 
 app.use(errorLogger);
 app.use(errorHandler);
