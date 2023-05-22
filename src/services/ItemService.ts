@@ -1,8 +1,48 @@
-import { getComment } from "../hackernews-api-v0";
+import { getComment, getStory } from "../hackernews-api-v0";
 import { CommentResponse } from "../types/Comment";
+import { StoryPreviewResponse, StoryResponse } from "../types/Story";
 
 class ItemService {
     constructor() {}
+
+    public async getStory(storyId: number) {
+        const story = await getStory(storyId);
+
+        let response: StoryResponse = {
+            id: story.id,
+            title: story.title,
+            url: story.url,
+            score: story.score,
+            poster: story.by,
+            commentCount: story.descendants,
+            comments: [],
+            postedAt: story.time
+        }
+
+        if (!story.kids) {
+            return response;
+        }
+
+        response.comments = await Promise.all(
+            story.kids.map(childId => this.getComment(childId))
+        );
+
+        return response;
+    }
+
+    public async getStoryPreview(storyId: number): Promise<StoryPreviewResponse> {
+        const story = await getStory(storyId);
+
+        return {
+            id: story.id,
+            title: story.title,
+            url: story.url,
+            score: story.score,
+            poster: story.by,
+            commentCount: story.descendants,
+            postedAt: story.time
+        }
+    }
 
     public async getComment(commentId: number) {
         const comment = await getComment(commentId);

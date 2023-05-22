@@ -18,10 +18,10 @@ export interface iJob extends iItem {
 }
 
 export interface iStory extends iItem {
-    descendants?: number;    // The total comment count.
-    score?: number;          // The story's score
-    title?: string;          // The title of the story,
-    url?: string;            // The URL of the story
+    descendants: number;    // The total comment count.
+    score: number;          // The story's score
+    title: string;          // The title of the story,
+    url: string;            // The URL of the story
 }
 
 export interface iComment extends iItem {

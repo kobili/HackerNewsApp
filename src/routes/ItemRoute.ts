@@ -10,4 +10,18 @@ router.get('/comment/:commentId', async (req: Request, res: Response, next: Next
         .catch(err => next(err));
 });
 
+router.get("/story/:storyId", async (req: Request, res: Response, next: NextFunction) => {
+    const storyId = Number.parseInt(req.params.storyId);
+    return itemService.getStory(storyId)
+        .then(story => res.send(story))
+        .catch(err => next(err));
+});
+
+router.get("/story/:storyId/preview", async (req: Request, res: Response, next: NextFunction) => {
+    const storyId = Number.parseInt(req.params.storyId);
+    return itemService.getStoryPreview(storyId)
+        .then(story => res.send(story))
+        .catch(err => next(err));
+});
+
 export default router;
