@@ -9,7 +9,7 @@ const SERVER_PORT = 3000;
 app.use(cors())
 
 app.get("/", (req: Request, res: Response) => {
-    res.send({ message: "Hello, Express!" })
+    res.send({ message: "Ready to receive requests!" })
 });
 
 app.use("/item", itemRoute);
@@ -19,5 +19,5 @@ app.use(errorHandler);
 
 app.listen(
     SERVER_PORT,
-    () => console.log(`Express server listening on port ${SERVER_PORT}: http://localhost:${SERVER_PORT}`)
+    () => console.log(`Express server listening at http://localhost:${SERVER_PORT}`)
 );
