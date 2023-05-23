@@ -1,7 +1,7 @@
 import { ItemResponse } from "../types/Item"
-import { HackerNewsItemResponse } from "../types/hacker-news-api/Item"
+import { iHackerNewsItem } from "../types/hacker-news-api/Item"
 
-export const mapItem = (hnItem: HackerNewsItemResponse): ItemResponse => {
+export const mapItem = (hnItem: iHackerNewsItem): ItemResponse => {
     const itemResponse = {} as ItemResponse;
 
     itemResponse.itemId = hnItem.id;

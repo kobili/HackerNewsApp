@@ -20,32 +20,6 @@ class ItemService {
 
         return response;
     }
-
-    // public async getStoryPreview(storyId: number): Promise<StoryPreviewResponse> {
-    //     const story = await getStory(storyId);
-
-    //     return {
-    //         id: story.id,
-    //         title: story.title,
-    //         url: story.url,
-    //         score: story.score,
-    //         poster: story.by,
-    //         commentCount: story.descendants,
-    //         postedAt: story.time
-    //     }
-    // }
-
-    // public async getAskPreview(askId: number): Promise<AskPreviewResponse> {
-    //     const ask = await getAsk(askId);
-
-    //     return {
-    //         id: ask.id,
-    //         title: ask.title,
-    //         poster: ask.by,
-    //         commentCount: ask.descendants,
-    //         postedAt: ask.time,
-    //     }
-    // }
 }
 
 const itemService = new ItemService();
