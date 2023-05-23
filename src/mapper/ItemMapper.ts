@@ -1,7 +1,7 @@
-import { ItemResponse } from "../types/Item"
+import { ItemPreview, ItemResponse } from "../types/Item"
 import { iHackerNewsItem } from "../types/hacker-news-api/Item"
 
-export const mapItem = (hnItem: iHackerNewsItem): ItemResponse => {
+export const mapItemToResponse = (hnItem: iHackerNewsItem): ItemResponse => {
     const itemResponse = {} as ItemResponse;
 
     itemResponse.itemId = hnItem.id;
@@ -36,7 +36,7 @@ export const mapItem = (hnItem: iHackerNewsItem): ItemResponse => {
     }
 
     if (hnItem.descendants) {
-        itemResponse.repliesCount = hnItem.descendants;
+        itemResponse.totalReplies = hnItem.descendants;
     }
 
     if (hnItem.score) {
@@ -48,4 +48,33 @@ export const mapItem = (hnItem: iHackerNewsItem): ItemResponse => {
     }
 
     return itemResponse;
+}
+
+export const mapItemToPreview = (item: iHackerNewsItem): ItemPreview => {
+    const preview = {} as ItemPreview;
+
+    preview.itemId = item.id;
+    preview.itemType = item.type;
+
+    if (item.by) {
+        preview.poster = item.by;
+    }
+
+    if (item.time) {
+        preview.postedAt = item.time
+    }
+
+    if (item.title) {
+        preview.title = item.title
+    }
+
+    if (item.descendants) {
+        preview.totalReplies = item.descendants
+    }
+
+    if (item.score) {
+        preview.upvotes = item.score
+    }
+
+    return preview;
 }

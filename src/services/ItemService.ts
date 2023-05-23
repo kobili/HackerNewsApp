@@ -1,5 +1,5 @@
 import { getItem } from "../hackernews-api-v0";
-import { mapItem } from "../mapper/ItemMapper";
+import { mapItemToResponse } from "../mapper/ItemMapper";
 import { ItemResponse } from "../types/Item";
 
 class ItemService {
@@ -8,7 +8,7 @@ class ItemService {
     public async getItem(itemId: number): Promise<ItemResponse> {
         const item = await getItem(itemId);
 
-        const response = mapItem(item);
+        const response = mapItemToResponse(item);
 
         if (item.parts) {
             response.pollParts = await Promise.all(item.parts.map(id => this.getItem(id)));

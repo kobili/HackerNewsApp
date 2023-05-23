@@ -13,9 +13,19 @@ export interface ItemResponse {
     url?: string;
     title?: string;    
 
-    repliesCount?: number;
+    totalReplies?: number;
     upvotes?: number;
 
     parentId?: number;
     pollParts?: ItemResponse[];
+}
+
+export interface ItemPreview {
+    itemId: number;
+    itemType: ItemType;
+    poster: string;
+    postedAt: number;
+    title: string;
+    totalReplies: number; 
+    upvotes: number;
 }

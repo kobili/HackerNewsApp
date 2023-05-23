@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import { errorHandler, errorLogger } from './src/middleware/ErrorHandlers';
 import itemRoute from './src/routes/ItemRoute';
+import liveDataRoute from './src/routes/LiveDataRoute'
 
 const app = express()
 const SERVER_PORT = 3000;
@@ -13,6 +14,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use("/item", itemRoute);
+app.use("/live", liveDataRoute)
 
 app.use(errorLogger);
 app.use(errorHandler);
