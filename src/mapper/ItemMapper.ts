@@ -1,3 +1,4 @@
+import { ItemType } from "../enums/ItemType";
 import { ItemPreview, ItemResponse } from "../types/Item"
 import { iHackerNewsItem } from "../types/hacker-news-api/Item"
 
@@ -37,6 +38,8 @@ export const mapItemToResponse = (hnItem: iHackerNewsItem): ItemResponse => {
 
     if (hnItem.descendants) {
         itemResponse.totalReplies = hnItem.descendants;
+    } else if (hnItem.type !== ItemType.JOB && hnItem.type !== ItemType.POLL_OPT) {
+        itemResponse.totalReplies = 0
     }
 
     if (hnItem.score) {
@@ -68,8 +71,14 @@ export const mapItemToPreview = (item: iHackerNewsItem): ItemPreview => {
         preview.title = item.title
     }
 
+    if (item.url) {
+        preview.url = item.url
+    }
+
     if (item.descendants) {
         preview.totalReplies = item.descendants
+    } else if (item.type !== ItemType.JOB && item.type !== ItemType.POLL_OPT) {   // jobs can't have comments
+        preview.totalReplies = 0
     }
 
     if (item.score) {

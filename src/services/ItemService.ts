@@ -1,3 +1,4 @@
+import { ItemType } from "../enums/ItemType";
 import { getItem } from "../hackernews-api-v0";
 import { mapItemToResponse } from "../mapper/ItemMapper";
 import { ItemResponse } from "../types/Item";
@@ -16,6 +17,8 @@ class ItemService {
 
         if (item.kids) {
             response.replies = await Promise.all(item.kids.map(id => this.getItem(id)));
+        } else if (item.type !== ItemType.JOB && item.type !== ItemType.POLL_OPT) {
+            response.replies = []
         }
 
         return response;

@@ -26,6 +26,7 @@ export interface ItemPreview {
     poster: string;
     postedAt: number;
     title: string;
+    url: string;
     totalReplies: number; 
     upvotes: number;
 }
