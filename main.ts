@@ -3,11 +3,13 @@ import cors from 'cors';
 import { errorHandler, errorLogger } from './src/middleware/ErrorHandlers';
 import itemRoute from './src/routes/ItemRoute';
 import liveDataRoute from './src/routes/LiveDataRoute'
+import { requestLogger } from './src/middleware/RequestLogger';
 
 const app = express()
 const SERVER_PORT = 3000;
 
 app.use(cors())
+app.use(requestLogger)
 
 app.get("/", (req: Request, res: Response) => {
     res.send({ message: "Ready to receive requests!" })
