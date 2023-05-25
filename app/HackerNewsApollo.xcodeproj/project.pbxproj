@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB0291482A20089200A2E78C /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0291472A20089200A2E78C /* ItemListView.swift */; };
 		CB4BADE62A1E793500670A33 /* HackerNewsApolloApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BADE52A1E793500670A33 /* HackerNewsApolloApp.swift */; };
 		CB4BADE82A1E793500670A33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BADE72A1E793500670A33 /* ContentView.swift */; };
 		CB4BADEA2A1E793600670A33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB4BADE92A1E793600670A33 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB0291472A20089200A2E78C /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		CB4BADE22A1E793500670A33 /* HackerNewsApollo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerNewsApollo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4BADE52A1E793500670A33 /* HackerNewsApolloApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsApolloApp.swift; sourceTree = "<group>"; };
 		CB4BADE72A1E793500670A33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = HackerNewsApollo/ContentView.swift; sourceTree = SOURCE_ROOT; };
@@ -108,6 +110,7 @@
 			children = (
 				CB805EA52A1EE76700690594 /* ItemPreviewView.swift */,
 				CB805EA72A1EECD900690594 /* ItemTypeDisplay.swift */,
+				CB0291472A20089200A2E78C /* ItemListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				CB805EA32A1EDEC900690594 /* JSONFileReader.swift in Sources */,
 				CB4BADF52A1E797800670A33 /* ItemPreview.swift in Sources */,
 				CB805EA82A1EECD900690594 /* ItemTypeDisplay.swift in Sources */,
+				CB0291482A20089200A2E78C /* ItemListView.swift in Sources */,
 				CB4BADE82A1E793500670A33 /* ContentView.swift in Sources */,
 				CB4BADE62A1E793500670A33 /* HackerNewsApolloApp.swift in Sources */,
 				CB805EA62A1EE76700690594 /* ItemPreviewView.swift in Sources */,
