@@ -1,0 +1,55 @@
+{
+    "total": 500,
+    "page": 1,
+    "perPage": 5,
+    "stories": [
+        {
+            "itemId": 36064515,
+            "itemType": "story",
+            "poster": "geox",
+            "postedAt": 1684966466,
+            "title": "UCLA Computer Grad Constructs “Crown Jewel of Cryptography”",
+            "url": "https://www.acm.org/media-center/2023/may/dissertation-award-2022",
+            "totalReplies": 10,
+            "upvotes": 36
+        },
+        {
+            "itemId": 36064971,
+            "itemType": "story",
+            "poster": "xorvoid",
+            "postedAt": 1684969376,
+            "title": "SectorC: A C Compiler in 512 bytes",
+            "url": "https://xorvoid.com/sectorc.html",
+            "totalReplies": 1,
+            "upvotes": 27
+        },
+        {
+            "itemId": 36025420,
+            "itemType": "poll",
+            "poster": "Tempest1981",
+            "postedAt": 1684710224,
+            "title": "Poll: How many logins/accounts do you have?",
+            "totalReplies": 8,
+            "upvotes": 34
+        },
+        {
+            "itemId": 36058008,
+            "itemType": "story",
+            "poster": "yujian",
+            "postedAt": 1684936049,
+            "title": "Ask HN: What do you know about vector embeddings?",
+            "totalReplies": 2,
+            "upvotes": 5
+        },
+        {
+            "itemId": 36031944,
+            "itemType": "story",
+            "poster": "jrhey",
+            "postedAt": 1684765871,
+            "title": "Show HN: I made Hazumi, a modern HN reader for iOS",
+            "url": "https://apps.apple.com/ie/app/hazumi/id1670237209",
+            "totalReplies": 12,
+            "upvotes": 12
+        }
+    ]
+}
